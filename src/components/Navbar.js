@@ -95,7 +95,7 @@ export default function Navbar() {
                             component="a"
                             href=""
                             sx={{
-                                mr: 1,
+                                ml: 6,
                                 display: { xs: 'flex', md: 'none' },
                                 flexGrow: 1,
                                 fontFamily: 'Roboto',
