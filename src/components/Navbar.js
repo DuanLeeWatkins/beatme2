@@ -36,6 +36,7 @@ export default function Navbar() {
               sx={{
                 mr: 2,
                 display: { xs: "none", md: "flex" },
+                align: "center",
                 fontFamily: "Roboto",
                 fontWeight: 700,
                 letterSpacing: ".3rem",
