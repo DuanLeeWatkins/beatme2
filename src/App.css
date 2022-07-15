@@ -2,12 +2,5 @@
   text-align: center;
   margin: 0;
   padding: 0;
-}
-
-.Button {
-  background-color: #7353ba;
-}
-
-.Button:hover {
-  background-color: #654b95;
+  font-family: "Times New Roman", sans-serif;
 }
