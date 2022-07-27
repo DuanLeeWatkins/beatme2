@@ -5,13 +5,11 @@ import Hero from "./components/Hero";
 import Footer from "./components/Footer";
 import { createTheme, ThemeProvider } from "@mui/material";
 
-
-
 function App() {
   const theme = createTheme({
     typography: {
-      fontFamily: ["Lato", "sans-serif"].join(",")
-    }
+      fontFamily: ["Lato", "sans-serif"].join(","),
+    },
   });
   return (
     <ThemeProvider theme={theme}>
