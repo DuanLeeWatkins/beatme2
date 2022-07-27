@@ -1,6 +1,6 @@
 import { Box, Button, Typography } from "@mui/material";
 import React from "react";
-import HeroImage from "../assets/james-stamler.jpg";
+import HeroImage from "../media/james-stamler.jpg";
 
 export default function Hero() {
   return (

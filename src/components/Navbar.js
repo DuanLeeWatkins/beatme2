@@ -10,6 +10,7 @@ import Container from "@mui/material/Container";
 import Button from "@mui/material/Button";
 import MenuItem from "@mui/material/MenuItem";
 
+
 export default function Navbar() {
   const pages = ["About", "Pricing", "Contact us"];
 
@@ -112,8 +113,12 @@ export default function Navbar() {
                 </Button>
               ))}
             </Box>
-            <Button color="inherit">Login</Button>
-            <Button color="inherit">Sign up</Button>
+            <Button href="src/pages/LoginPage.js" color="inherit">
+              Login
+            </Button>
+            <Button href="src/pages/SignupPage.js" color="inherit">
+              Sign up
+            </Button>
           </Toolbar>
         </Container>
       </AppBar>
