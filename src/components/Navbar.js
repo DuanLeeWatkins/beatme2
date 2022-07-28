@@ -9,7 +9,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
 import Button from "@mui/material/Button";
 import MenuItem from "@mui/material/MenuItem";
-
+import { Link } from "react-router-dom";
 
 export default function Navbar() {
   const pages = ["About", "Pricing", "Contact us"];
@@ -113,12 +113,10 @@ export default function Navbar() {
                 </Button>
               ))}
             </Box>
-            <Button href="src/pages/LoginPage.js" color="inherit">
-              Login
-            </Button>
-            <Button href="src/pages/SignupPage.js" color="inherit">
-              Sign up
-            </Button>
+
+            <Button color="inherit">Login</Button>
+
+            <Button color="inherit">Sign up</Button>
           </Toolbar>
         </Container>
       </AppBar>
@@ -126,8 +124,8 @@ export default function Navbar() {
   };
 
   return (
-    <nav>
+    <div>
       <ResponsiveAppBar></ResponsiveAppBar>
-    </nav>
+    </div>
   );
 }
