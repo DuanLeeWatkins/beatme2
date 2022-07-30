@@ -1,9 +1,10 @@
 import React from "react";
 import "./App.css";
-import Navbar from "./components/Navbar";
-import Hero from "./components/Hero";
-import Footer from "./components/Footer";
 import { createTheme, ThemeProvider } from "@mui/material";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import HomePage from "./pages/HomePage";
+import LoginPage from "./pages/LoginPage";
+import SignupPage from "./pages/SignupPage";
 
 function App() {
   const theme = createTheme({
@@ -14,15 +15,13 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <div className="App">
-        <header>
-          <nav>
-            <Navbar />
-          </nav>
-        </header>
-        <section>
-          <Hero />
-        </section>
-        <Footer />
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="login" element={<LoginPage />} />
+            <Route path="signup" element={<SignupPage />} />
+          </Routes>
+        </BrowserRouter>
       </div>
     </ThemeProvider>
   );
