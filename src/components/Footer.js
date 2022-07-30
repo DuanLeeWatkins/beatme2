@@ -1,4 +1,4 @@
-import { CopyrightOutlined } from "@mui/icons-material";
+
 import { Box, Stack, Typography } from "@mui/material";
 import React from "react";
 
@@ -7,7 +7,8 @@ function Footer() {
     <Box sx={{ background: "black", height: "200px"  }}>
       <Stack direction={{ xs: "row", md: "row" }} p={2}>
         <Box flex={1}>
-          <Typography color={"white"} align={"center"}><CopyrightOutlined fontSize="small" /> 2022 Beatme.com All Rights Reserved</Typography>
+         
+          <Typography color={"white"} align={"center"}> 2022 Beatme. All Rights Reserved</Typography>
           <Typography color={"white"} align={"center"}>
             Contact
           </Typography>

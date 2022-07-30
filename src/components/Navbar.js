@@ -9,6 +9,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
 import Button from "@mui/material/Button";
 import MenuItem from "@mui/material/MenuItem";
+import { Link } from "react-router-dom";
 
 
 export default function Navbar() {
@@ -114,7 +115,7 @@ export default function Navbar() {
               ))}
             </Box>
 
-            <Button color="inherit">Login</Button>
+            <Link to="login"><Button color="inherit">Login</Button></Link>
 
             <Button color="inherit">Sign up</Button>
           </Toolbar>
