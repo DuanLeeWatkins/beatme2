@@ -11,7 +11,6 @@ import Button from "@mui/material/Button";
 import MenuItem from "@mui/material/MenuItem";
 import { Link } from "react-router-dom";
 
-
 export default function Navbar() {
   const pages = ["About", "Pricing", "Contact us"];
 
@@ -86,10 +85,10 @@ export default function Navbar() {
               </Menu>
             </Box>
             <Typography
-              variant="h5"
+              variant="h4"
               noWrap
               component="a"
-              href=""
+              href="/"
               sx={{
                 ml: 6,
                 display: { xs: "flex", md: "none" },
@@ -115,9 +114,18 @@ export default function Navbar() {
               ))}
             </Box>
 
-            <Link to="login"><Button color="inherit">Login</Button></Link>
+            <Button component={Link} to="login" variant="plain" color="inherit">
+              login
+            </Button>
 
-            <Button color="inherit">Sign up</Button>
+            <Button
+              component={Link}
+              to="signup"
+              variant="plain"
+              color="inherit"
+            >
+              Sign up
+            </Button>
           </Toolbar>
         </Container>
       </AppBar>
