@@ -1,5 +1,5 @@
-import { Box, Button, Typography } from "@mui/material";
 import React from "react";
+import { Box, Button, Typography } from "@mui/material";
 import HeroImage from "../media/james-stamler.jpg";
 
 export default function Hero() {
@@ -23,6 +23,7 @@ export default function Hero() {
             Whenever Wherever
           </Typography>
           <Button
+            className="primaryButton"
             variant="contained"
             size="large"
             sx={{
