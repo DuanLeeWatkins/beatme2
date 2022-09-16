@@ -23,15 +23,9 @@ export default function Hero() {
             Whenever Wherever
           </Typography>
           <Button
-            className="primaryButton"
             variant="contained"
             size="large"
-            sx={{
-              backgroundColor: "#7353ba",
-              "&:hover": {
-                backgroundColor: "#654b95",
-              },
-            }}
+            color="primary"
           >
             Get Started
           </Button>

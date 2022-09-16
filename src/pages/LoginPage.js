@@ -11,9 +11,9 @@ import {
 import SigninImage from "../media/signin-logo.png";
 
 export default function LoginPage() {
-  const paperStyle = {
+  const loginPaperStyle = {
     padding: 20,
-    height: "70vh",
+    height: "45vh",
     width: 280,
     margin: "20px auto",
   };
@@ -22,7 +22,7 @@ export default function LoginPage() {
   };
   return (
     <Grid>
-      <Paper elevation={10} style={paperStyle}>
+      <Paper elevation={10} style={loginPaperStyle}>
         <img src={SigninImage} alt="Beatme Logo" />
         <Typography variant="h5">Sign in</Typography>
         <TextField
@@ -32,6 +32,7 @@ export default function LoginPage() {
           fullWidth
           required
           margin="normal"
+          focused
         ></TextField>
         <TextField
           label="Password"
@@ -45,11 +46,9 @@ export default function LoginPage() {
         <Button
           type="submit"
           variant="contained"
+          color="primary"
           sx={{
-            backgroundColor: "#7353ba",
-            "&:hover": {
-              backgroundColor: "#654b95",
-            },
+           
             marginTop: "20px",
             marginBottom: "20px",
           }}

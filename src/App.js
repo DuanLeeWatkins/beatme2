@@ -7,13 +7,19 @@ import LoginPage from "./pages/LoginPage";
 import SignupPage from "./pages/SignupPage";
 import ErrorPage from "./pages/ErrorPage";
 import Navbar from './components/Navbar';
-import Footer from './components/Footer'
 
 function App() {
   const theme = createTheme({
     typography: {
       fontFamily: ["Lato", "sans-serif"].join(","),
     },
+    palette: {
+      type: 'light',
+      primary: {
+        main: '#7353ba'
+      }
+    }
+    
   });
   return (
     <ThemeProvider theme={theme}>
@@ -26,7 +32,6 @@ function App() {
             <Route path="signup" element={<SignupPage />} />
             <Route path="*" element={<ErrorPage />} />
           </Routes>
-          <footer><Footer /></footer>
         </BrowserRouter>
       </div>
     </ThemeProvider>

@@ -1,26 +1,25 @@
-
-import { Box, Stack, Typography } from "@mui/material";
+import { Box, Stack, Typography, Link } from "@mui/material";
 import React from "react";
 
+function Copyright(props) {
+  return (
+    <Typography variant="body2" color="White" align="center" {...props}>
+      {"© "}
+      {new Date().getFullYear()}{" "}
+      <Link color="inherit" href="https://mui.com/">
+        Beatme.com
+      </Link>{" "}
+      All Rights Reserved
+      
+    </Typography>
+  );
+}
 function Footer() {
   return (
-    <Box sx={{ background: "black", height: "200px"  }}>
+    <Box sx={{ background: "black", height: "200vh" }}>
       <Stack direction={{ xs: "row", md: "row" }} p={2}>
         <Box flex={1}>
-         
-          <Typography color={"white"} align={"center"}> 2022 Beatme. All Rights Reserved</Typography>
-          <Typography color={"white"} align={"center"}>
-            Contact
-          </Typography>
-          <Typography color={"white"} align={"center"}>
-            Terms of Use
-          </Typography>
-          <Typography color={"white"} align={"center"}>
-            Privacy Policy
-          </Typography>
-          <Typography color={"white"} align={"center"}>
-            Help
-          </Typography>
+          <Copyright sx={{ mt: 5 }} />
         </Box>
       </Stack>
     </Box>
