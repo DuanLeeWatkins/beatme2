@@ -16,7 +16,7 @@ function Copyright(props) {
 }
 function Footer() {
   return (
-    <Box sx={{ background: "black", height: "200vh" }}>
+    <Box sx={{ background: "black", height: "100vh" }}>
       <Stack direction={{ xs: "row", md: "row" }} p={2}>
         <Box flex={1}>
           <Copyright sx={{ mt: 5 }} />
