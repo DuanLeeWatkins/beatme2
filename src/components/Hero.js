@@ -1,6 +1,7 @@
 import React from "react";
 import { Box, Button, Typography } from "@mui/material";
 import HeroImage from "../media/james-stamler.jpg";
+import { Link } from "react-router-dom";
 
 export default function Hero() {
   return (
@@ -26,6 +27,8 @@ export default function Hero() {
             variant="contained"
             size="large"
             color="primary"
+            component={Link}
+            to="login"
           >
             Get Started
           </Button>
