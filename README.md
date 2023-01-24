@@ -1,3 +1,41 @@
+# Beatme2
+
+Beatme2 is an updated version of Beatme. Beatme2 is a beat/instrumental file management application. Users can create an account to upload
+beats/instrumentals to store online and have access to them anywhere anytime.
+
+
+
+![Image of Beatme app]()
+
+## How It's Made:
+
+**Tech used:** HTML, CSS, JavaScript, Node.js, React.js, Mui, Express.js
+
+
+I used **MongoDB** to store the title, bpm, audio link, and tags. The audio files are stored on **Cloudinary**. I utilized **EJS** as the template language to generate the login, signup, profile, home, feed, and main pages. **JS** allows the user to interact with the pages. I used **Bootstrap** for the **CSS** styling. **Express** is used for the server creation and **Node JS** is used for the backend. I used **Passport** as the authentication middleware to authenticate requests. I utilized **Mongoose** to create my user and audio schemas. And finally This app is hosted on **Heroku**.
+
+## Lessons Learned:
+
+I definitely enjoyed working on this app because it is something that the music producer community could use. I know because I am apart of that community. Having a cloud based file management app that is tailored for beat/instrumental storage would provide a great alternative to other file management apps. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
