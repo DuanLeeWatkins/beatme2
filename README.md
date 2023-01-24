@@ -5,14 +5,13 @@ beats/instrumentals to store online and have access to them anywhere anytime.
 
 
 
-![Image of Beatme app]()
+![Image of Beatme app](client/public/beatme2-homescreen.png)
 
 ## How It's Made:
 
 **Tech used:** HTML, CSS, JavaScript, Node.js, React.js, Mui, Express.js
 
 
-I used **MongoDB** to store the title, bpm, audio link, and tags. The audio files are stored on **Cloudinary**. I utilized **EJS** as the template language to generate the login, signup, profile, home, feed, and main pages. **JS** allows the user to interact with the pages. I used **Bootstrap** for the **CSS** styling. **Express** is used for the server creation and **Node JS** is used for the backend. I used **Passport** as the authentication middleware to authenticate requests. I utilized **Mongoose** to create my user and audio schemas. And finally This app is hosted on **Heroku**.
 
 ## Lessons Learned:
 
