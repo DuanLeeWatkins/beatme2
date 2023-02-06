@@ -2,11 +2,8 @@ import React from "react";
 import "./App.css";
 import { createTheme, ThemeProvider } from "@mui/material";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import HomePage from "./pages/HomePage";
-import LoginPage from "./pages/LoginPage";
-import SignupPage from "./pages/SignupPage";
-import ErrorPage from "./pages/ErrorPage";
-import Navbar from './components/Navbar';
+import { HomePage, LoginPage, SignupPage, ErrorPage, Navbar, Feed, SearchFeed } from "./components";
+
 
 function App() {
   const theme = createTheme({
@@ -25,12 +22,14 @@ function App() {
     <ThemeProvider theme={theme}>
       <div className="App">
         <BrowserRouter>
-          <nav><Navbar /></nav>
+          <Navbar />
           <Routes>
-            <Route path="/" element={<HomePage />} />
+            <Route path="/" exact element={<HomePage />} />
+            <Route path="feed" element={<Feed />} />
             <Route path="login" element={<LoginPage />} />
             <Route path="signup" element={<SignupPage />} />
             <Route path="*" element={<ErrorPage />} />
+            <Route path="/search/:searchTerm" element={SearchFeed} />
           </Routes>
         </BrowserRouter>
       </div>
