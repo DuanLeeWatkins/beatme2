@@ -25,9 +25,9 @@ function App() {
           <Navbar />
           <Routes>
             <Route path="/" exact element={<HomePage />} />
-            <Route path="feed" element={<Feed />} />
-            <Route path="login" element={<LoginPage />} />
-            <Route path="signup" element={<SignupPage />} />
+            <Route path="/feed" element={<Feed />} />
+            <Route path="/login" element={<LoginPage />} />
+            <Route path="/signup" element={<SignupPage />} />
             <Route path="*" element={<ErrorPage />} />
             <Route path="/search/:searchTerm" element={SearchFeed} />
           </Routes>
