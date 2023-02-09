@@ -30,7 +30,7 @@ export default function SignupPage() {
       <Paper elevation={10} style={signupPaperStyle}>
         <Box
           sx={{
-            marginTop: 8,
+            marginTop: 1,
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
@@ -80,7 +80,7 @@ export default function SignupPage() {
                   autoComplete="new-password"
                 />
               </Grid>
-              <Grid item xs={12}></Grid>
+              
             </Grid>
             <Button
               type="submit"

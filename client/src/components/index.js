@@ -8,3 +8,4 @@ export { default as Footer } from "./Footer";
 export { default as ErrorPage } from "./ErrorPage";
 export { default as SearchFeed } from "./SearchFeed";
 export { default as Feed } from "./Feed";
+export { default as SearchBar } from "./SearchBar";
