@@ -9,3 +9,4 @@ export { default as ErrorPage } from "./ErrorPage";
 export { default as SearchFeed } from "./SearchFeed";
 export { default as Feed } from "./Feed";
 export { default as SearchBar } from "./SearchBar";
+export {default as Account} from "./Account"

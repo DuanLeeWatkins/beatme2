@@ -1,4 +1,4 @@
-import React from "react";
+import { React, useState, useEffect } from "react";
 
 import {
   Button,
@@ -10,7 +10,40 @@ import {
 } from "@mui/material";
 import SigninImage from "../media/signin-logo.png";
 
+import supabase from "../config/supabaseClient";
+import { Auth } from "@supabase/auth-ui-react"
+import { ThemeSupa } from "@supabase/auth-ui-shared";
+
+import { useNavigate } from "react-router-dom";
+
 export default function LoginPage() {
+  const navigate = useNavigate()
+
+  const [email, setEmail] = useState("")
+  const [password, setPassword] = useState("")
+  const [formError, setFormError] = useState(null)
+
+
+  supabase.auth.onAuthStateChange(async (e) => {
+    if (e !== "SIGNED_OUT") {
+      // forward to feed
+      navigate("/feed")
+    } else {
+      // forward to login in page
+      navigate("/login")
+    }
+  })
+
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+
+    if (!email || !password) {
+      setFormError("Please fill in all fields ")
+      return;
+    }
+  }
+
+  
   const loginPaperStyle = {
     padding: 20,
     height: "45vh",
@@ -22,6 +55,7 @@ export default function LoginPage() {
   };
   return (
     <Grid>
+     
       <Paper elevation={10} style={loginPaperStyle}>
         <img src={SigninImage} alt="Beatme Logo" />
         <Typography variant="h5">Sign in</Typography>

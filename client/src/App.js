@@ -1,25 +1,35 @@
-import React from "react";
+import { React, useState, useEffect } from "react";
 import "./App.css";
 import { createTheme, ThemeProvider } from "@mui/material";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { HomePage, LoginPage, SignupPage, ErrorPage, Navbar, Feed, SearchFeed } from "./components";
 
+import {
+  HomePage,
+  LoginPage,
+  SignupPage,
+  ErrorPage,
+  Navbar,
+  Feed,
+  SearchFeed,
+  Account,
+} from "./components";
+
+import supabase from "./config/supabaseClient";
 
 function App() {
-  const theme = createTheme({
-    typography: {
-      fontFamily: ["Lato", "sans-serif"].join(","),
-    },
-    palette: {
-      type: 'light',
-      primary: {
-        main: '#7353ba'
-      }
-    }
-    
-  });
+  const [session, setSession] = useState(null);
+
+  useEffect(() => {
+    supabase.auth.getSession().then(({ data: { session } }) => {
+      setSession(session);
+    });
+    supabase.auth.onAuthStateChange((_event, session) => {
+      setSession(session);
+    });
+  }, []);
+
+  
   return (
-    <ThemeProvider theme={theme}>
       <div className="App">
         <BrowserRouter>
           <Navbar />
@@ -27,13 +37,21 @@ function App() {
             <Route path="/" exact element={<HomePage />} />
             <Route path="/feed" element={<Feed />} />
             <Route path="/login" element={<LoginPage />} />
-            <Route path="/signup" element={<SignupPage />} />
+            <Route
+              path="/signup"
+              element={
+                !session ? (
+                  <SignupPage />
+                ) : (
+                  <Account key={session.user.id} session={session} />
+                )
+              }
+            />
             <Route path="*" element={<ErrorPage />} />
-            <Route path="/search/:searchTerm" element={SearchFeed} />
+            {/* <Route path="/search/:searchTerm" element={SearchFeed} /> */}
           </Routes>
         </BrowserRouter>
       </div>
-    </ThemeProvider>
   );
 }
 

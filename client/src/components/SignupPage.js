@@ -1,23 +1,40 @@
 import * as React from "react";
 import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
-import Link from "@mui/material/Link";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import SigninImage from "../media/signin-logo.png";
 import { Paper } from "@mui/material";
+import { useState } from "react";
 
+import supabase from "../config/supabaseClient";
 
 export default function SignupPage() {
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    console.log({
-      email: data.get("email"),
-      password: data.get("password"),
-    });
+  const [email, setEmail] = useState("");
+  const [loading, setLoading] = useState(false);
+
+  const handleLogin = async (e) => {
+    e.preventDefault();
+
+    try {
+      setLoading(true);
+      const { error } = await supabase.auth.signInWithOtp({
+        email,
+        options: {
+          emailRedirectTo: `http://localhost:3000/feed/`,
+        },
+      });
+      if (error) throw error;
+      alert("Check your email for the login link!");
+    } catch (error) {
+      alert(error.error_description || error.message);
+    } finally {
+      setLoading(false);
+      setEmail("");
+    }
   };
+
   const signupPaperStyle = {
     padding: 20,
     height: "55vh",
@@ -40,64 +57,49 @@ export default function SignupPage() {
           <Typography component="h1" variant="h5">
             Join Beatme
           </Typography>
-          <Box
-            component="form"
-            noValidate
-            onSubmit={handleSubmit}
-            sx={{ mt: 3 }}
-          >
-            <Grid container spacing={2}>
-              <Grid item xs={12}>
-                <TextField
-                  autoComplete="given-name"
-                  name="userName"
-                  required
-                  fullWidth
-                  id="userName"
-                  label="User Name"
-                  autoFocus
-                />
-              </Grid>
+          <Box>
+            {loading ? (
+              <Typography component="h6" mt={4}>
+                Sending Magic Link...
+              </Typography>
+            ) : (
+              <Box
+                component="form"
+                noValidate
+                onSubmit={handleLogin}
+                sx={{ mt: 3, mb: 4 }}
+              >
+                <Grid container spacing={2}>
+                  <Grid item xs={12}>
+                    <Typography component="h2">
+                      Sign in via magic link with your email below
+                    </Typography>
+                  </Grid>
 
-              <Grid item xs={12}>
-                <TextField
-                  required
+                  <Grid item xs={12}>
+                    <TextField
+                      required
+                      fullWidth
+                      id="email"
+                      value={email}
+                      label="Email Address"
+                      name="email"
+                      autoComplete="email"
+                      onChange={(e) => setEmail(e.target.value)}
+                    />
+                  </Grid>
+                </Grid>
+                <Button
+                  type="submit"
+                  color="primary"
                   fullWidth
-                  id="email"
-                  label="Email Address"
-                  name="email"
-                  autoComplete="email"
-                />
-              </Grid>
-              <Grid item xs={12}>
-                <TextField
-                  required
-                  fullWidth
-                  name="password"
-                  label="Password"
-                  type="password"
-                  id="password"
-                  autoComplete="new-password"
-                />
-              </Grid>
-              
-            </Grid>
-            <Button
-              type="submit"
-              color="primary"
-              fullWidth
-              variant="contained"
-              sx={{ mt: 3, mb: 2 }}
-            >
-              Sign Up
-            </Button>
-            <Grid container justifyContent="flex-end">
-              <Grid item>
-                <Link href="#" variant="body2">
-                  Already have an account? Sign in
-                </Link>
-              </Grid>
-            </Grid>
+                  variant="contained"
+                  sx={{ mt: 3, mb: 2 }}
+                >
+                  Send Magic Link
+                </Button>
+              </Box>
+            )}
           </Box>
         </Box>
       </Paper>
