@@ -1,5 +1,4 @@
 import { React, useState, useEffect } from "react";
-import "./App.css";
 import { createTheme, ThemeProvider } from "@mui/material";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
@@ -36,7 +35,7 @@ function App() {
           <Routes>
             <Route path="/" exact element={<HomePage />} />
             <Route path="/feed" element={<Feed />} />
-            <Route path="/login" element={<LoginPage />} />
+            <Route path="/signin" element={<LoginPage />} />
             <Route
               path="/signup"
               element={

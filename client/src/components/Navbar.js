@@ -106,8 +106,8 @@ export default function Navbar() {
               ))}
             </Box>
 
-            <Button component={Link} to="login" variant="plain" color="inherit">
-              login
+            <Button component={Link} to="signin" variant="plain" color="inherit">
+              Sign in
             </Button>
 
             <Button
