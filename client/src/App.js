@@ -1,10 +1,9 @@
 import { React, useState, useEffect } from "react";
-import { createTheme, ThemeProvider } from "@mui/material";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import {
   HomePage,
-  LoginPage,
+  SigninPage,
   SignupPage,
   ErrorPage,
   Navbar,
@@ -27,30 +26,29 @@ function App() {
     });
   }, []);
 
-  
   return (
-      <div className="App">
-        <BrowserRouter>
-          <Navbar />
-          <Routes>
-            <Route path="/" exact element={<HomePage />} />
-            <Route path="/feed" element={<Feed />} />
-            <Route path="/signin" element={<LoginPage />} />
-            <Route
-              path="/signup"
-              element={
-                !session ? (
-                  <SignupPage />
-                ) : (
-                  <Account key={session.user.id} session={session} />
-                )
-              }
-            />
-            <Route path="*" element={<ErrorPage />} />
-            {/* <Route path="/search/:searchTerm" element={SearchFeed} /> */}
-          </Routes>
-        </BrowserRouter>
-      </div>
+    <div className="App">
+      <BrowserRouter>
+        <Navbar />
+        <Routes>
+          <Route path="/" exact element={<HomePage />} />
+          <Route path="/feed" element={<Feed />} />
+          <Route path="/signin" element={<SigninPage />} />
+          <Route
+            path="/signup"
+            element={
+              !session ? (
+                <SignupPage />
+              ) : (
+                <Account key={session.user.id} session={session} />
+              )
+            }
+          />
+          <Route path="*" element={<ErrorPage />} />
+          {/* <Route path="/search/:searchTerm" element={SearchFeed} /> */}
+        </Routes>
+      </BrowserRouter>
+    </div>
   );
 }
 

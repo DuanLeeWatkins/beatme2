@@ -16,7 +16,7 @@ export default function Hero() {
           width: "100%",
         }}
       >
-        <Box sx={{ color: "white", align: "center", pt: 2 }}>
+        <Box sx={{ color: "white", pt: 2 }}>
           <Typography variant="h3" sx={{ fontWeight: 500, pb: 2 }}>
             Access to your beats
           </Typography>
@@ -28,7 +28,7 @@ export default function Hero() {
             size="large"
             color="primary"
             component={Link}
-            to="login"
+            to="signin"
           >
             Get Started
           </Button>
