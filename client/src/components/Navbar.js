@@ -1,5 +1,15 @@
 import React from "react";
-import { AppBar, Box, Toolbar, Typography, Menu, Container, Button, MenuItem, IconButton } from "@mui/material";
+import {
+  AppBar,
+  Box,
+  Toolbar,
+  Typography,
+  Menu,
+  Container,
+  Button,
+  MenuItem,
+  IconButton,
+} from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import { Link } from "react-router-dom";
 
@@ -106,8 +116,8 @@ export default function Navbar() {
               ))}
             </Box>
 
-            <Button component={Link} to="signin" variant="plain" color="inherit">
-              Sign in
+            <Button component={Link} to="login" variant="plain" color="inherit">
+              Login
             </Button>
 
             <Button

@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import {
   HomePage,
-  SigninPage,
+  LoginPage,
   SignupPage,
   ErrorPage,
   Navbar,
@@ -33,7 +33,7 @@ function App() {
         <Routes>
           <Route path="/" exact element={<HomePage />} />
           <Route path="/feed" element={<Feed />} />
-          <Route path="/signin" element={<SigninPage />} />
+          <Route path="/login" element={<LoginPage />} />
           <Route
             path="/signup"
             element={
