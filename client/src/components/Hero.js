@@ -28,7 +28,7 @@ export default function Hero() {
             size="large"
             color="primary"
             component={Link}
-            to="signin"
+            to="login"
           >
             Get Started
           </Button>
