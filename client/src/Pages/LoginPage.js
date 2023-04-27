@@ -25,8 +25,8 @@ export default function LoginPage() {
 
   supabase.auth.onAuthStateChange(async (e) => {
     if (e !== "SIGNED_OUT") {
-      // forward to feed
-      navigate("/feed");
+      // forward to Account
+      navigate("/account");
     } else {
       // forward to login in page
       navigate("/login");
