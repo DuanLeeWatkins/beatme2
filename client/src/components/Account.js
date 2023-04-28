@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import supabase from "../config/supabaseClient";
 
+
 const Account = ({ session }) => {
   const [loading, setLoading] = useState(true);
   const [username, setUsername] = useState(null);
